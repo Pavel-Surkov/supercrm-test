@@ -1,5 +1,8 @@
 // Main scss file with default vite styles
 @import './base.scss';
 
+// Mixins
+@import './mixins.scss';
+
 // App layout styles
 @import './todos.scss', './todo.scss';
