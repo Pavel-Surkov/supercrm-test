@@ -7,6 +7,9 @@
 		background: $white;
 		padding: 10px;
 		border-radius: 7px;
+		box-shadow:
+			0px 1px 2px 0px #d0daeb,
+			0px 0px 2px 0px #eef4fe;
 	}
 	&-title {
 		display: block;
@@ -24,7 +27,8 @@
 
 			overflow: hidden;
 			-webkit-box-orient: vertical;
-			// display: -webkit-box;
+			text-overflow: ellipsis;
+			display: -webkit-box;
 			-webkit-line-clamp: 3;
 		}
 	}

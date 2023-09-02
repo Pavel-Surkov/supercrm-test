@@ -7,8 +7,8 @@ function Todo() {
         <label className="todo-title">
           <input type="checkbox" value="" />
           <span>
-            For the sacke of example we are a building company and we have just
-            closed
+            For the sacke of example we are a&nbsp;building company and we have
+            just closed
           </span>
         </label>
         <div className="todo-dates">
