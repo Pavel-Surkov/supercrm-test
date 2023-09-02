@@ -1,4 +1,5 @@
 // Main scss file with default vite styles
 @import './base.scss';
 
-@import './todos.scss';
+// App layout styles
+@import './todos.scss', './todo.scss';
