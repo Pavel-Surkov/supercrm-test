@@ -1,0 +1,57 @@
+.todos {
+	max-width: 255px;
+	&-wrapper {
+		@include flex(column);
+		gap: 8px;
+	}
+	&-header {
+		padding: 0 4px;
+		margin-bottom: 8px;
+		@include flex(row, center, space-between);
+		gap: 20px;
+		&__day {
+			color: $primary-green;
+			font-size: 1.4rem;
+			font-weight: 600;
+		}
+	}
+	&-panel {
+		@include flex(row, center, space-between);
+		gap: 8px;
+		&__add {
+			width: 20px;
+			height: 20px;
+			border-radius: 4px;
+			background: $neuteral-gray-20;
+			padding: 0;
+			position: relative;
+			& span {
+				position: absolute;
+				width: 12px;
+				height: 2px;
+				top: 50%;
+				left: 50%;
+				background: $primary-blue;
+				border-radius: 2px;
+				&:first-child {
+					transform: translate(-50%, -50%);
+				}
+				&:last-child {
+					transform: translate(-50%, -50%) rotate(90deg);
+				}
+			}
+		}
+		&__count {
+			width: 20px;
+			height: 20px;
+			border-radius: 4px;
+			padding: 0;
+			box-sizing: border-box;
+			border: 1px solid $primary-gray;
+			@include flex(row, center, center);
+			color: $primary-black;
+			font-size: 1.2rem;
+			font-weight: 600;
+		}
+	}
+}

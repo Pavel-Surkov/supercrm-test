@@ -1,2 +1,75 @@
 .todo {
+	border-radius: 7px;
+	padding: 4px;
+	background: $neuteral-gray-30;
+	width: 100%;
+	&-wrapper {
+		background: $white;
+		padding: 10px;
+		border-radius: 7px;
+	}
+	&-title {
+		display: block;
+		margin-bottom: 8px;
+		& input {
+			margin: 0;
+			margin-right: 6px;
+			transform: translateY(2px);
+			float: left;
+		}
+		& span {
+			color: $primary-blue;
+			@include font(1.4rem, 1.3);
+			font-weight: 600;
+
+			overflow: hidden;
+			-webkit-box-orient: vertical;
+			// display: -webkit-box;
+			-webkit-line-clamp: 3;
+		}
+	}
+	&-dates {
+		@include flex(row, center, space-between);
+		gap: 20px;
+		margin-bottom: 4px;
+		& time {
+			color: $primary-green;
+			font-size: 1.3rem;
+			font-weight: 600;
+		}
+	}
+	&-description {
+		margin-bottom: 8px;
+		& p {
+			white-space: nowrap;
+			overflow: hidden;
+			-webkit-box-orient: vertical;
+			text-overflow: ellipsis;
+			font-size: 1.3rem;
+		}
+	}
+	&-bottom {
+		@include flex(row, center);
+		&__purple {
+			font-size: 1.2rem;
+			font-weight: 600;
+			margin-right: 4px;
+			padding: 1px 6px 2px;
+			color: $white;
+			background: $primary-purple;
+			border-radius: 4px;
+		}
+		&__gray {
+			font-size: 1.2rem;
+			color: $primary-dark;
+			padding: 1px 6px 2px;
+			font-weight: 600;
+			background: $neuteral-gray-20;
+			border-radius: 4px;
+		}
+		&__avatar {
+			margin-left: auto;
+			border-radius: 50%;
+		}
+	}
 }

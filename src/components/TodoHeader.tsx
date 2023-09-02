@@ -1,7 +1,7 @@
 function TodoHeader() {
   return (
     <header className="todos-header">
-      <p>Today</p>
+      <p className="todos-header__day">Today</p>
       <div className="todos-panel">
         <button
           type="button"

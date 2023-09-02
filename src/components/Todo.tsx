@@ -21,7 +21,13 @@ function Todo() {
         <div className="todo-bottom">
           <span className="todo-bottom__purple">Entity title</span>
           <span className="todo-bottom__gray">Front-end</span>
-          <img className="todo-bottom__avatar" src={avatar} alt="" />
+          <img
+            className="todo-bottom__avatar"
+            width={24}
+            height={24}
+            src={avatar}
+            alt=""
+          />
         </div>
       </div>
     </div>
