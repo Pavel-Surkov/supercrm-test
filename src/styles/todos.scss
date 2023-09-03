@@ -1,8 +1,12 @@
 .todos {
-	max-width: 255px;
+	padding: 20px 0;
+	width: 100%;
+	max-width: 263px;
 	&-wrapper {
 		@include flex(column);
 		gap: 8px;
+		height: 514px;
+		overflow-y: auto;
 	}
 	&-header {
 		padding: 0 4px;

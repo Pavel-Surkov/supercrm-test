@@ -8,6 +8,9 @@ function App() {
         <Header />
         <div className="todos-wrapper">
           <Todo />
+          <Todo />
+          <Todo />
+          <Todo />
         </div>
       </div>
     </main>
