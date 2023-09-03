@@ -14,13 +14,15 @@
 	&-title {
 		display: block;
 		margin-bottom: 8px;
+		position: relative;
 		& input {
 			margin: 0;
-			margin-right: 6px;
-			transform: translateY(2px);
+			transform: translateY(3px);
 			float: left;
+			position: absolute;
 		}
 		& span {
+			position: relative;
 			color: $primary-blue;
 			@include font(1.4rem, 1.3);
 			font-weight: 600;
@@ -30,6 +32,12 @@
 			text-overflow: ellipsis;
 			display: -webkit-box;
 			-webkit-line-clamp: 3;
+
+			&::before {
+				position: relative;
+				content: '';
+				margin-right: calc(18px);
+			}
 		}
 	}
 	&-dates {
