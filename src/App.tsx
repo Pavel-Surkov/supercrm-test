@@ -1,10 +1,12 @@
-import Header from './components/TodoHeader';
-import Todo from './components/Todo';
+import s from './App.module.scss';
+
+import Header from './components/TodoHeader/TodoHeader';
+import Todo from './components/Todo/Todo';
 
 function App() {
   return (
-    <main className="main">
-      <div className="todos">
+    <main className={s.main}>
+      <div className={s.todos}>
         <Header />
         <div className="todos-wrapper">
           <Todo />

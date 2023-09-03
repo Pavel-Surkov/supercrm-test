@@ -1,28 +1,30 @@
-import avatar from '../assets/todo-avatar.png';
+import s from './Todo.module.scss';
+
+import avatar from '../../assets/todo-avatar.png';
 
 function Todo() {
   return (
-    <div className="todo">
-      <div className="todo-wrapper">
-        <label className="todo-title">
+    <div className={s.todo}>
+      <div className={s.wrapper}>
+        <label className={s.title}>
           <input type="checkbox" value="" />
           <span>
             For the sacke of example we are a&nbsp;building company and we have
             just closed
           </span>
         </label>
-        <div className="todo-dates">
+        <div className={s.dates}>
           <time>Oct 12, 01:00 PM</time>
           <time>Oct 13, 02:00 PM</time>
         </div>
-        <div className="todo-description">
+        <div className={s.description}>
           <p>Task description with long long long text and many many letters</p>
         </div>
-        <div className="todo-bottom">
-          <span className="todo-bottom__purple">Entity title</span>
-          <span className="todo-bottom__gray">Front-end</span>
+        <div className={s.todoBottom}>
+          <span className={s.btnPurple}>Entity title</span>
+          <span className={s.btnGray}>Front-end</span>
           <img
-            className="todo-bottom__avatar"
+            className={s.avatar}
             width={24}
             height={24}
             src={avatar}

@@ -1,0 +1,113 @@
+@import '../../styles/variables.scss';
+@import '../../styles/mixins.scss';
+
+.todo {
+	border-radius: 7px;
+	padding: 4px;
+	background: $neuteral-gray-30;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.wrapper {
+	background: $white;
+	padding: 10px;
+	border-radius: 7px;
+	box-shadow:
+		0px 1px 2px 0px #d0daeb,
+		0px 0px 2px 0px #eef4fe;
+}
+
+.title {
+	display: block;
+	margin-bottom: 8px;
+	position: relative;
+	cursor: pointer;
+	& input {
+		margin: 0;
+		transform: translateY(3px);
+		float: left;
+		position: absolute;
+	}
+	& span {
+		position: relative;
+		color: $primary-blue;
+		@include font(1.4rem, 1.3);
+		font-weight: 600;
+
+		overflow: hidden;
+		-webkit-box-orient: vertical;
+		text-overflow: ellipsis;
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+
+		&::before {
+			position: relative;
+			content: '';
+			margin-right: calc(18px);
+		}
+	}
+}
+
+.dates {
+	@include flex(row, center, space-between);
+	gap: 20px;
+	margin-bottom: 4px;
+	& time {
+		color: $primary-green;
+		font-size: 1.3rem;
+		font-weight: 600;
+	}
+}
+
+.description {
+	margin-bottom: 8px;
+	& p {
+		white-space: nowrap;
+		overflow: hidden;
+		-webkit-box-orient: vertical;
+		text-overflow: ellipsis;
+		font-size: 1.3rem;
+	}
+}
+
+.todoBottom {
+	@include flex(row, center);
+}
+
+.btnPurple {
+	font-size: 1.2rem;
+	font-weight: 600;
+	margin-right: 4px;
+	padding: 1px 6px 2px;
+	color: $white;
+	background: $primary-purple;
+	border-radius: 4px;
+}
+
+.btnGray {
+	font-size: 1.2rem;
+	color: $primary-dark;
+	padding: 1px 6px 2px;
+	padding-right: 1px;
+	font-weight: 600;
+	background: $neuteral-gray-20;
+	border-radius: 4px;
+	position: relative;
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+	&::after {
+		position: absolute;
+		content: '';
+		background: url('../../assets/gray-tab-corner.svg') no-repeat 50%;
+		width: 12px;
+		height: 100%;
+		top: 0;
+		left: calc(100% - 1px);
+	}
+}
+
+.avatar {
+	margin-left: auto;
+	border-radius: 50%;
+}

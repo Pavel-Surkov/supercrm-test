@@ -1,8 +1,8 @@
 // Import abstracts
-@import './variables.scss', './mixins.scss';
+@import './fonts.scss', './mixins.scss', './variables.scss';
 
 // Main scss file with default vite styles
 @import './base.scss';
 
 // App layout styles
-@import './todos.scss', './todo.scss';
+@import './todos.scss';
