@@ -1,18 +1,28 @@
 import s from './Todo.module.scss';
-
 import avatar from '../../assets/todo-avatar.png';
 
-import { useState } from 'react';
+import { useState, useMemo } from 'react';
+import { faker } from '@faker-js/faker';
+import type { UserData } from '../../types';
 
-type UserData = {
-  userId: number;
-  id: number;
-  title: string;
-  completed: boolean;
-};
+function transformDate(date: Date) {
+  return new Intl.DateTimeFormat('en-US', {
+    hour12: true,
+    month: 'short',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+  }).format(date);
+}
 
 function Todo({ data }: { data: UserData }) {
   const [completed, setCompleted] = useState<boolean>(data.completed);
+
+  const description = useMemo(() => faker.lorem.sentence(10), []);
+  const tagPurpleValue = useMemo(() => faker.lorem.word(), []);
+  const tagGrayValue = useMemo(() => faker.lorem.word(), []);
+  const startDate = useMemo(() => faker.date.soon({ days: 1 }), []);
+  const endDate = useMemo(() => faker.date.soon({ days: 3 }), []);
 
   return (
     <div className={s.todo}>
@@ -26,15 +36,15 @@ function Todo({ data }: { data: UserData }) {
           <span>{data.title}</span>
         </label>
         <div className={s.dates}>
-          <time>Oct 12, 01:00 PM</time>
-          <time>Oct 13, 02:00 PM</time>
+          <time>{transformDate(startDate)}</time>
+          <time>{transformDate(endDate)}</time>
         </div>
         <div className={s.description}>
-          <p>Task description with long long long text and many many letters</p>
+          <p>{description}</p>
         </div>
         <div className={s.todoBottom}>
-          <span className={s.btnPurple}>Entity title</span>
-          <span className={s.btnGray}>Front-end</span>
+          <span className={s.btnPurple}>{tagPurpleValue}</span>
+          <span className={s.btnGray}>{tagGrayValue}</span>
           <img
             className={s.avatar}
             width={24}

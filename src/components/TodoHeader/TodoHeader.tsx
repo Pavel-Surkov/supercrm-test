@@ -1,6 +1,6 @@
 import s from './TodoHeader.module.scss';
 
-function TodoHeader() {
+function TodoHeader({ todosLoaded }: { todosLoaded: number }) {
   return (
     <header className={s.header}>
       <p className={s.day}>Today</p>
@@ -9,7 +9,7 @@ function TodoHeader() {
           <span></span>
           <span></span>
         </button>
-        <div className={s.todosCount}>2</div>
+        <div className={s.todosCount}>{todosLoaded}</div>
       </div>
     </header>
   );

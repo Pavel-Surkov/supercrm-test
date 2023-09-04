@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 
 function useFetch<T = unknown>(url: string) {
-  const [data, setData] = useState<T[] | null>(null);
+  const [data, setData] = useState<T | null>(null);
   const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
