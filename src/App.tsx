@@ -20,7 +20,7 @@ function App() {
     <main className={s.main}>
       <div className={s.todos}>
         <Header todosLoaded={data ? data.length : 0} />
-        <div className="todos-wrapper">
+        <div className={s.todosWrapper}>
           {data && data.map((data) => <Todo data={data} key={data.id} />)}
         </div>
       </div>
