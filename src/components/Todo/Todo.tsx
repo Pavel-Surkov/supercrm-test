@@ -2,16 +2,28 @@ import s from './Todo.module.scss';
 
 import avatar from '../../assets/todo-avatar.png';
 
-function Todo() {
+import { useState } from 'react';
+
+type UserData = {
+  userId: number;
+  id: number;
+  title: string;
+  completed: boolean;
+};
+
+function Todo({ data }: { data: UserData }) {
+  const [completed, setCompleted] = useState<boolean>(data.completed);
+
   return (
     <div className={s.todo}>
       <div className={s.wrapper}>
         <label className={s.title}>
-          <input type="checkbox" value="" />
-          <span>
-            For the sacke of example we are a&nbsp;building company and we have
-            just closed
-          </span>
+          <input
+            type="checkbox"
+            checked={completed}
+            onChange={() => setCompleted((prev) => !prev)}
+          />
+          <span>{data.title}</span>
         </label>
         <div className={s.dates}>
           <time>Oct 12, 01:00 PM</time>

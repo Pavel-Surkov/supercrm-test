@@ -1,33 +1,30 @@
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const useFetch = (url: string, options: RequestInit) => {
-  const [data, setData] = useState(null);
-  const [error, setError] = useState<string | null>(null);
+function useFetch<T = unknown>(url: string) {
+  const [data, setData] = useState<T[] | null>(null);
+  const [errorMessage, setErrorMessage] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchData = async (): Promise<void> => {
+    async function getData(): Promise<void> {
       try {
-        const response = await fetch(url, options);
-        const data = await response.json();
-
+        const { data } = await axios.get(url);
         setData(data);
       } catch (err: unknown) {
-        let message: string = 'unknownError';
+        let message = 'Unknown error';
 
-        if (err instanceof Error) {
+        if (axios.isAxiosError(err)) {
           message = err.message;
-        } else {
-          message = String(err);
         }
 
-        setError(message);
+        setErrorMessage(message);
       }
-    };
+    }
 
-    fetchData();
+    getData();
   }, []);
 
-  return { data, error };
-};
+  return { data, errorMessage };
+}
 
 export default useFetch;
