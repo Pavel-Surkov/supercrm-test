@@ -50,7 +50,7 @@ function App() {
     const rootEl = rootRef.current;
     const bottomEl = bottomRef.current;
 
-    if (!rootEl || !bottomEl) {
+    if (!rootEl || !bottomEl || !data) {
       return;
     }
 
@@ -68,6 +68,8 @@ function App() {
 
     const observer = new IntersectionObserver(callback, options);
     observer.observe(bottomEl);
+
+    return () => observer.disconnect();
   }, [rootRef, bottomRef, data]);
 
   return (
