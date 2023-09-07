@@ -24,7 +24,7 @@ function useFetch<T = unknown>(url: string) {
     getData();
   }, []);
 
-  return { data, errorMessage };
+  return { data, errorMessage, setData };
 }
 
 export default useFetch;

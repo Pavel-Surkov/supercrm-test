@@ -15,7 +15,9 @@ function transformDate(date: Date) {
   }).format(date);
 }
 
-function Todo({ data }: { data: UserData }) {
+type TodoProps = { data: UserData };
+
+function Todo({ data }: TodoProps) {
   const [completed, setCompleted] = useState<boolean>(data.completed);
 
   const description = useMemo(() => faker.lorem.sentence(10), []);
